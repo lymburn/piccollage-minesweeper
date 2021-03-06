@@ -69,6 +69,17 @@ class BoardTests: XCTestCase {
         XCTAssertTrue(board.cellIsRevealed(row: 0, col: 0))
     }
     
+    func testSetFlagUnrevealsCell() {
+        // Test if setting a flag twice unreveals the cell
+        
+        board = Board(rows: 5, cols: 5, numberOfMines: 5)
+        
+        board.setFlag(row: 0, col: 0)
+        board.setFlag(row: 0, col: 0)
+        
+        XCTAssertFalse(board.cellIsRevealed(row: 0, col: 0))
+    }
+    
     func testFloodFill() {
         // Test if all the cells are revealed after flood filling a board without mines
         board = Board(rows: 5, cols: 5, numberOfMines: 0)
