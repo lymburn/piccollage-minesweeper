@@ -14,6 +14,9 @@
 		2691D26425F3016B00F4049A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2691D26225F3016B00F4049A /* LaunchScreen.storyboard */; };
 		2691D26F25F3016C00F4049A /* piccollage_minesweeperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2691D26E25F3016C00F4049A /* piccollage_minesweeperTests.swift */; };
 		2691D27A25F3016C00F4049A /* piccollage_minesweeperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2691D27925F3016C00F4049A /* piccollage_minesweeperUITests.swift */; };
+		26C32EE625F306AD00567772 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C32EE525F306AD00567772 /* Board.swift */; };
+		26C32EEB25F306BF00567772 /* BoardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C32EEA25F306BF00567772 /* BoardCell.swift */; };
+		26C32EF025F3070C00567772 /* BoardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C32EEF25F3070C00567772 /* BoardCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		2691D27525F3016C00F4049A /* piccollage-minesweeperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "piccollage-minesweeperUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2691D27925F3016C00F4049A /* piccollage_minesweeperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = piccollage_minesweeperUITests.swift; sourceTree = "<group>"; };
 		2691D27B25F3016C00F4049A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26C32EE525F306AD00567772 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
+		26C32EEA25F306BF00567772 /* BoardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardCell.swift; sourceTree = "<group>"; };
+		26C32EEF25F3070C00567772 /* BoardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,7 @@
 		2691D25625F3016900F4049A /* piccollage-minesweeper */ = {
 			isa = PBXGroup;
 			children = (
+				26C32EF425F3078500567772 /* Helpers */,
 				2691D29325F301C200F4049A /* View */,
 				2691D29225F301BF00F4049A /* Model */,
 				2691D29125F301B900F4049A /* Controller */,
@@ -146,6 +153,8 @@
 		2691D29225F301BF00F4049A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				26C32EE525F306AD00567772 /* Board.swift */,
+				26C32EEA25F306BF00567772 /* BoardCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -153,8 +162,16 @@
 		2691D29325F301C200F4049A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				26C32EEF25F3070C00567772 /* BoardCollectionViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		26C32EF425F3078500567772 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,9 +303,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26C32EEB25F306BF00567772 /* BoardCell.swift in Sources */,
 				2691D25C25F3016900F4049A /* MainController.swift in Sources */,
 				2691D25825F3016900F4049A /* AppDelegate.swift in Sources */,
+				26C32EE625F306AD00567772 /* Board.swift in Sources */,
 				2691D25A25F3016900F4049A /* SceneDelegate.swift in Sources */,
+				26C32EF025F3070C00567772 /* BoardCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
