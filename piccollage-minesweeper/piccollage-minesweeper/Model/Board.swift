@@ -55,7 +55,7 @@ struct Board {
         }
     }
     
-    func cellIsMine(row: Int, col: Int) -> Bool {
+    func cellHasMine(row: Int, col: Int) -> Bool {
         return grid[row][col].hasMine
     }
     

@@ -1,5 +1,5 @@
 //
-//  MainController.swift
+//  MainViewController.swift
 //  piccollage-minesweeper
 //
 //  Created by Eugene Lu on 2021-03-05.
@@ -7,18 +7,22 @@
 
 import UIKit
 
-class MainController: UIViewController {
+class MainViewController: BaseViewController {
+    // Public properties
+    var gameSetting: GameSettings!
+    
     // Private properties
-    private var board = Board(rows: 5, cols: 5, numberOfMines: 5)
+    private var board: Board!
     private var gameState: GameState = .running
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupViews()
-        setupConstraints()
+        setupNavigationBar(title: "Minesweeper", barColor: .systemBlue, titleColor: .white)
+        
         registerCell()
         registerLongPressGesture()
+        setupBoard()
     }
     
     let boardCellIdentifier = "BoardCellIdentifier"
@@ -29,7 +33,7 @@ class MainController: UIViewController {
         button.setTitle("Restart", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.backgroundColor = .lightGray
-        button.addTarget(self, action: #selector(MainController.resetPressed), for: .touchDown)
+        button.addTarget(self, action: #selector(MainViewController.resetPressed), for: .touchDown)
         return button
     }()
 
@@ -49,27 +53,34 @@ class MainController: UIViewController {
         collectionView.dataSource = self
         return collectionView
     }()
-}
-
-// MARK: Setup
-extension MainController {
-    fileprivate func setupViews() {
+    
+    override func setupViews() {
+        super.setupViews()
+        
         view.backgroundColor = .white
         view.addSubview(restartButton)
         view.addSubview(boardCollectionView)
     }
     
-    fileprivate func setupConstraints() {
+    override func setupConstraints() {
+        super.setupConstraints()
+        
+        let boardWidth = CGFloat(40 * gameSetting.boardColumns)
+        let boardHeight = CGFloat(40 * gameSetting.boardRows)
+        
         restartButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         restartButton.widthAnchor.constraint(equalToConstant: ScreenSize.width * 0.3).isActive = true
         restartButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16).isActive = true
         
         boardCollectionView.topAnchor.constraint(equalTo: restartButton.bottomAnchor, constant: 16).isActive = true
         boardCollectionView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
-        boardCollectionView.widthAnchor.constraint(equalToConstant: 40 * 5).isActive = true
-        boardCollectionView.heightAnchor.constraint(equalToConstant: 40 * 5).isActive = true
+        boardCollectionView.widthAnchor.constraint(equalToConstant: boardWidth).isActive = true
+        boardCollectionView.heightAnchor.constraint(equalToConstant: boardHeight).isActive = true
     }
-    
+}
+
+// MARK: Setup
+extension MainViewController {
     fileprivate func registerCell() {
         boardCollectionView.register(BoardCollectionViewCell.self, forCellWithReuseIdentifier: boardCellIdentifier)
     }
@@ -77,14 +88,20 @@ extension MainController {
     fileprivate func registerLongPressGesture() {
         // Register long pressure gesture recognizer on collection view cell
         let gestureRecognizer: UILongPressGestureRecognizer = UILongPressGestureRecognizer(target: self,
-                                                                                           action: #selector(MainController.handleLongPress))
+                                                                                           action: #selector(MainViewController.handleLongPress))
         gestureRecognizer.minimumPressDuration = 0.5
         self.boardCollectionView.addGestureRecognizer(gestureRecognizer)
+    }
+    
+    fileprivate func setupBoard() {
+        board = Board(rows: gameSetting.boardRows,
+                      cols: gameSetting.boardColumns,
+                      numberOfMines: gameSetting.numberOfMines)
     }
 }
 
 // MARK: Collection view delegate & data source functions
-extension MainController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         // Represents rows
         return board.numberOfRows
@@ -122,7 +139,7 @@ extension MainController: UICollectionViewDelegate, UICollectionViewDataSource {
             collectionView.reloadData()
             
             // Set game state to finished if hit mine
-            if board.cellIsMine(row: row, col: col) {
+            if board.cellHasMine(row: row, col: col) {
                 self.gameState = .finished
             }
         }
@@ -130,7 +147,7 @@ extension MainController: UICollectionViewDelegate, UICollectionViewDataSource {
 }
 
 // Touch events
-extension MainController {
+extension MainViewController {
     @objc func handleLongPress(gestureRecognizer: UILongPressGestureRecognizer) {
         // Function to add a flag after long press on a cell
         if gestureRecognizer.state != .began {
@@ -148,7 +165,7 @@ extension MainController {
     @objc func resetPressed() {
         // Create new board, reset game state, and reload collection view
         self.gameState = .running
-        board = Board(rows: 5, cols: 5, numberOfMines: 5)
+        setupBoard()
         self.boardCollectionView.reloadData()
     }
 }
