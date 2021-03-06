@@ -8,7 +8,7 @@
 import UIKit
 
 class MainController: UIViewController {
-    private var board = Board(rows: 5, cols: 5, numberOfMines: 5)
+    private var board = Board(rows: 5, cols: 5, numberOfMines: 20)
     
     override func viewDidLoad() {
         super.viewDidLoad()

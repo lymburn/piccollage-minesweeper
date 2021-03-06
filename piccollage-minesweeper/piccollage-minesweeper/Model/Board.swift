@@ -13,6 +13,7 @@ struct Board {
     private let numberOfMines: Int
     let numberOfColumns: Int
     let numberOfRows: Int
+    var firstClick = true
     
     init (rows: Int, cols: Int, numberOfMines: Int) {
         // Simply assume rows & cols will be a valid number for this quiz
@@ -29,6 +30,7 @@ struct Board {
     }
     
     /* Public functions */
+    
     func getStatusTextForCell(row: Int, col: Int) -> String {
         /*
             Function to get the status text for the board cell with the possible types:
@@ -43,7 +45,7 @@ struct Board {
             return ""
         } else if cell.hasMine {
             return "M"
-        } else if cell.numberOfNeighborMines > 0{
+        } else if cell.numberOfNeighborMines > 0 {
             return "\(cell.numberOfNeighborMines)"
         } else {
             return ""
@@ -55,9 +57,12 @@ struct Board {
     }
     
     mutating func revealCell(row: Int, col: Int) {
+        handleFirstClickEvent(row: row, col: col)
+        
         grid[row][col].revealed = true
         
         if grid[row][col].numberOfNeighborMines == 0 {
+            // If no mines nearby, recursively flood fill
             floodFill(row: row, col: col)
         }
     }
@@ -76,16 +81,19 @@ struct Board {
     private mutating func initializeMines() {
         // Initialize all the mines randomly on the grid
         for _ in 0..<numberOfMines {
-            let randomIndex = Int.random(in: 0..<possibleMineLocations.count)
-            let mineLocation = possibleMineLocations[randomIndex]
-            let row = mineLocation.0
-            let col = mineLocation.1
-            grid[row][col].hasMine = true
-            
-            // Prevent the mine location from being chosen again
-            possibleMineLocations.remove(at: randomIndex)
-            
+            setRandomMine()
         }
+    }
+    
+    private mutating func setRandomMine() {
+        let randomIndex = Int.random(in: 0..<possibleMineLocations.count)
+        let mineLocation = possibleMineLocations[randomIndex]
+        let row = mineLocation.0
+        let col = mineLocation.1
+        grid[row][col].hasMine = true
+        
+        // Prevent the mine location from being chosen again
+        possibleMineLocations.remove(at: randomIndex)
     }
     
     private mutating func setNeighborMinesCount() {
@@ -118,6 +126,21 @@ struct Board {
         }
         
         return neighboringMinesCount
+    }
+    
+    private mutating func handleFirstClickEvent(row: Int, col: Int) {
+        if firstClick {
+            firstClick = false
+            
+            // If the first click is a mine, move it to a new location
+            if grid[row][col].hasMine {
+                setRandomMine()
+                
+                // Reset cell to a normal one
+                grid[row][col].hasMine = false
+                grid[row][col].numberOfNeighborMines = countNeighborMines(row: row, col: col)
+            }
+        }
     }
     
     private mutating func floodFill(row: Int, col: Int) {
