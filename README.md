@@ -15,3 +15,6 @@ The player can either tap a cell to reveal it or hold down on a cell to place a 
 2. Build and run in a simulator or device that is **at least as large as the iPhone 6**. I did not dynamically size the board by device so the minimum device size for optimal gameplay is the iPhone 6.
 3. Select a level in the start screen.
 4. Click/tap the tiles until a mine is hit or victory achieved. Remember, holding down is the method to place a flag. Press the restart button or choose a new difficulty to keep playing!
+
+## Tests
+Note that unit tests for the Board.swift functionalities are also included with 98% coverage. 
