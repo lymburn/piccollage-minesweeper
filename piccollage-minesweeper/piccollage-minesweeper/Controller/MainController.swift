@@ -8,7 +8,7 @@
 import UIKit
 
 class MainController: UIViewController {
-    private var board = Board(rows: 5, cols: 5, numberOfMines: 20)
+    private var board = Board(rows: 5, cols: 5, numberOfMines: 5)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,6 +16,7 @@ class MainController: UIViewController {
         setupViews()
         setupConstraints()
         registerCell()
+        registerLongPressGesture()
     }
     
     let boardCellIdentifier = "BoardCellIdentifier"
@@ -55,6 +56,14 @@ extension MainController {
     fileprivate func registerCell() {
         boardCollectionView.register(BoardCollectionViewCell.self, forCellWithReuseIdentifier: boardCellIdentifier)
     }
+    
+    fileprivate func registerLongPressGesture() {
+        // Register long pressure gesture recognizer on collection view cell
+        let gestureRecognizer: UILongPressGestureRecognizer = UILongPressGestureRecognizer(target: self,
+                                                                                           action: #selector(MainController.handleLongPress))
+        gestureRecognizer.minimumPressDuration = 0.5
+        self.boardCollectionView.addGestureRecognizer(gestureRecognizer)
+    }
 }
 
 // MARK: Collection view delegate & data source functions
@@ -88,6 +97,23 @@ extension MainController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         board.revealCell(row: indexPath.section, col: indexPath.row)
         collectionView.reloadData()
+    }
+}
+
+// Touch events
+extension MainController {
+    @objc func handleLongPress(gestureRecognizer: UILongPressGestureRecognizer) {
+        // Function to add a flag after long press on a cell
+        if gestureRecognizer.state != .began {
+            return
+        }
+
+        let point = gestureRecognizer.location(in: self.boardCollectionView)
+
+        if let indexPath = (self.boardCollectionView.indexPathForItem(at: point)) {
+            board.setFlag(row: indexPath.section, col: indexPath.row)
+            self.boardCollectionView.reloadData()
+        }
     }
 }
 

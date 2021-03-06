@@ -36,13 +36,16 @@ struct Board {
             Function to get the status text for the board cell with the possible types:
                 # (number) - cell with a number of mines greater than 0 around
                 empty - cell with 0 mines around
-                M - cell is a mine
+                F - cell has a flag
+                M - cell has a mine
         */
         
         let cell = grid[row][col]
         
         if !cell.revealed {
             return ""
+        } else if cell.hasFlag {
+            return "F"
         } else if cell.hasMine {
             return "M"
         } else if cell.numberOfNeighborMines > 0 {
@@ -65,6 +68,11 @@ struct Board {
             // If no mines nearby, recursively flood fill
             floodFill(row: row, col: col)
         }
+    }
+    
+    mutating func setFlag(row: Int, col: Int) {
+        grid[row][col].revealed = true
+        grid[row][col].hasFlag = true
     }
     
     /* Private functions */

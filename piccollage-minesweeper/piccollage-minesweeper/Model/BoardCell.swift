@@ -10,5 +10,6 @@ import Foundation
 struct BoardCell {
     var revealed: Bool = false
     var hasMine: Bool = false
+    var hasFlag: Bool = false
     var numberOfNeighborMines: Int = 0
 }
