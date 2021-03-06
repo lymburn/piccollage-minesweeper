@@ -1,0 +1,620 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2691D25825F3016900F4049A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2691D25725F3016900F4049A /* AppDelegate.swift */; };
+		2691D25A25F3016900F4049A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2691D25925F3016900F4049A /* SceneDelegate.swift */; };
+		2691D25C25F3016900F4049A /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2691D25B25F3016900F4049A /* MainController.swift */; };
+		2691D26125F3016B00F4049A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2691D26025F3016B00F4049A /* Assets.xcassets */; };
+		2691D26425F3016B00F4049A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2691D26225F3016B00F4049A /* LaunchScreen.storyboard */; };
+		2691D26F25F3016C00F4049A /* piccollage_minesweeperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2691D26E25F3016C00F4049A /* piccollage_minesweeperTests.swift */; };
+		2691D27A25F3016C00F4049A /* piccollage_minesweeperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2691D27925F3016C00F4049A /* piccollage_minesweeperUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2691D26B25F3016C00F4049A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2691D24C25F3016900F4049A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2691D25325F3016900F4049A;
+			remoteInfo = "piccollage-minesweeper";
+		};
+		2691D27625F3016C00F4049A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2691D24C25F3016900F4049A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2691D25325F3016900F4049A;
+			remoteInfo = "piccollage-minesweeper";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2691D25425F3016900F4049A /* piccollage-minesweeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "piccollage-minesweeper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2691D25725F3016900F4049A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2691D25925F3016900F4049A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		2691D25B25F3016900F4049A /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		2691D26025F3016B00F4049A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2691D26325F3016B00F4049A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2691D26525F3016B00F4049A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2691D26A25F3016C00F4049A /* piccollage-minesweeperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "piccollage-minesweeperTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2691D26E25F3016C00F4049A /* piccollage_minesweeperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = piccollage_minesweeperTests.swift; sourceTree = "<group>"; };
+		2691D27025F3016C00F4049A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2691D27525F3016C00F4049A /* piccollage-minesweeperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "piccollage-minesweeperUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2691D27925F3016C00F4049A /* piccollage_minesweeperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = piccollage_minesweeperUITests.swift; sourceTree = "<group>"; };
+		2691D27B25F3016C00F4049A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2691D25125F3016900F4049A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2691D26725F3016C00F4049A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2691D27225F3016C00F4049A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2691D24B25F3016900F4049A = {
+			isa = PBXGroup;
+			children = (
+				2691D25625F3016900F4049A /* piccollage-minesweeper */,
+				2691D26D25F3016C00F4049A /* piccollage-minesweeperTests */,
+				2691D27825F3016C00F4049A /* piccollage-minesweeperUITests */,
+				2691D25525F3016900F4049A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2691D25525F3016900F4049A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2691D25425F3016900F4049A /* piccollage-minesweeper.app */,
+				2691D26A25F3016C00F4049A /* piccollage-minesweeperTests.xctest */,
+				2691D27525F3016C00F4049A /* piccollage-minesweeperUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2691D25625F3016900F4049A /* piccollage-minesweeper */ = {
+			isa = PBXGroup;
+			children = (
+				2691D29325F301C200F4049A /* View */,
+				2691D29225F301BF00F4049A /* Model */,
+				2691D29125F301B900F4049A /* Controller */,
+				2691D28A25F3018400F4049A /* Supporting Files */,
+				2691D25725F3016900F4049A /* AppDelegate.swift */,
+				2691D25925F3016900F4049A /* SceneDelegate.swift */,
+				2691D26525F3016B00F4049A /* Info.plist */,
+			);
+			path = "piccollage-minesweeper";
+			sourceTree = "<group>";
+		};
+		2691D26D25F3016C00F4049A /* piccollage-minesweeperTests */ = {
+			isa = PBXGroup;
+			children = (
+				2691D26E25F3016C00F4049A /* piccollage_minesweeperTests.swift */,
+				2691D27025F3016C00F4049A /* Info.plist */,
+			);
+			path = "piccollage-minesweeperTests";
+			sourceTree = "<group>";
+		};
+		2691D27825F3016C00F4049A /* piccollage-minesweeperUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2691D27925F3016C00F4049A /* piccollage_minesweeperUITests.swift */,
+				2691D27B25F3016C00F4049A /* Info.plist */,
+			);
+			path = "piccollage-minesweeperUITests";
+			sourceTree = "<group>";
+		};
+		2691D28A25F3018400F4049A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2691D26025F3016B00F4049A /* Assets.xcassets */,
+				2691D26225F3016B00F4049A /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2691D29125F301B900F4049A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2691D25B25F3016900F4049A /* MainController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2691D29225F301BF00F4049A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2691D29325F301C200F4049A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2691D25325F3016900F4049A /* piccollage-minesweeper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2691D27E25F3016C00F4049A /* Build configuration list for PBXNativeTarget "piccollage-minesweeper" */;
+			buildPhases = (
+				2691D25025F3016900F4049A /* Sources */,
+				2691D25125F3016900F4049A /* Frameworks */,
+				2691D25225F3016900F4049A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "piccollage-minesweeper";
+			productName = "piccollage-minesweeper";
+			productReference = 2691D25425F3016900F4049A /* piccollage-minesweeper.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2691D26925F3016C00F4049A /* piccollage-minesweeperTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2691D28125F3016C00F4049A /* Build configuration list for PBXNativeTarget "piccollage-minesweeperTests" */;
+			buildPhases = (
+				2691D26625F3016C00F4049A /* Sources */,
+				2691D26725F3016C00F4049A /* Frameworks */,
+				2691D26825F3016C00F4049A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2691D26C25F3016C00F4049A /* PBXTargetDependency */,
+			);
+			name = "piccollage-minesweeperTests";
+			productName = "piccollage-minesweeperTests";
+			productReference = 2691D26A25F3016C00F4049A /* piccollage-minesweeperTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2691D27425F3016C00F4049A /* piccollage-minesweeperUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2691D28425F3016C00F4049A /* Build configuration list for PBXNativeTarget "piccollage-minesweeperUITests" */;
+			buildPhases = (
+				2691D27125F3016C00F4049A /* Sources */,
+				2691D27225F3016C00F4049A /* Frameworks */,
+				2691D27325F3016C00F4049A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2691D27725F3016C00F4049A /* PBXTargetDependency */,
+			);
+			name = "piccollage-minesweeperUITests";
+			productName = "piccollage-minesweeperUITests";
+			productReference = 2691D27525F3016C00F4049A /* piccollage-minesweeperUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2691D24C25F3016900F4049A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					2691D25325F3016900F4049A = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					2691D26925F3016C00F4049A = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 2691D25325F3016900F4049A;
+					};
+					2691D27425F3016C00F4049A = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 2691D25325F3016900F4049A;
+					};
+				};
+			};
+			buildConfigurationList = 2691D24F25F3016900F4049A /* Build configuration list for PBXProject "piccollage-minesweeper" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2691D24B25F3016900F4049A;
+			productRefGroup = 2691D25525F3016900F4049A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2691D25325F3016900F4049A /* piccollage-minesweeper */,
+				2691D26925F3016C00F4049A /* piccollage-minesweeperTests */,
+				2691D27425F3016C00F4049A /* piccollage-minesweeperUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2691D25225F3016900F4049A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2691D26425F3016B00F4049A /* LaunchScreen.storyboard in Resources */,
+				2691D26125F3016B00F4049A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2691D26825F3016C00F4049A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2691D27325F3016C00F4049A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2691D25025F3016900F4049A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2691D25C25F3016900F4049A /* MainController.swift in Sources */,
+				2691D25825F3016900F4049A /* AppDelegate.swift in Sources */,
+				2691D25A25F3016900F4049A /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2691D26625F3016C00F4049A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2691D26F25F3016C00F4049A /* piccollage_minesweeperTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2691D27125F3016C00F4049A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2691D27A25F3016C00F4049A /* piccollage_minesweeperUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2691D26C25F3016C00F4049A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2691D25325F3016900F4049A /* piccollage-minesweeper */;
+			targetProxy = 2691D26B25F3016C00F4049A /* PBXContainerItemProxy */;
+		};
+		2691D27725F3016C00F4049A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2691D25325F3016900F4049A /* piccollage-minesweeper */;
+			targetProxy = 2691D27625F3016C00F4049A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2691D26225F3016B00F4049A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2691D26325F3016B00F4049A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2691D27C25F3016C00F4049A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2691D27D25F3016C00F4049A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2691D27F25F3016C00F4049A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UJ6RY8Y8CY;
+				INFOPLIST_FILE = "piccollage-minesweeper/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eugenelu.piccollage-minesweeper";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		2691D28025F3016C00F4049A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UJ6RY8Y8CY;
+				INFOPLIST_FILE = "piccollage-minesweeper/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eugenelu.piccollage-minesweeper";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		2691D28225F3016C00F4049A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UJ6RY8Y8CY;
+				INFOPLIST_FILE = "piccollage-minesweeperTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eugenelu.piccollage-minesweeperTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/piccollage-minesweeper.app/piccollage-minesweeper";
+			};
+			name = Debug;
+		};
+		2691D28325F3016C00F4049A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UJ6RY8Y8CY;
+				INFOPLIST_FILE = "piccollage-minesweeperTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eugenelu.piccollage-minesweeperTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/piccollage-minesweeper.app/piccollage-minesweeper";
+			};
+			name = Release;
+		};
+		2691D28525F3016C00F4049A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UJ6RY8Y8CY;
+				INFOPLIST_FILE = "piccollage-minesweeperUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eugenelu.piccollage-minesweeperUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "piccollage-minesweeper";
+			};
+			name = Debug;
+		};
+		2691D28625F3016C00F4049A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UJ6RY8Y8CY;
+				INFOPLIST_FILE = "piccollage-minesweeperUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eugenelu.piccollage-minesweeperUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "piccollage-minesweeper";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2691D24F25F3016900F4049A /* Build configuration list for PBXProject "piccollage-minesweeper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2691D27C25F3016C00F4049A /* Debug */,
+				2691D27D25F3016C00F4049A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2691D27E25F3016C00F4049A /* Build configuration list for PBXNativeTarget "piccollage-minesweeper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2691D27F25F3016C00F4049A /* Debug */,
+				2691D28025F3016C00F4049A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2691D28125F3016C00F4049A /* Build configuration list for PBXNativeTarget "piccollage-minesweeperTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2691D28225F3016C00F4049A /* Debug */,
+				2691D28325F3016C00F4049A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2691D28425F3016C00F4049A /* Build configuration list for PBXNativeTarget "piccollage-minesweeperUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2691D28525F3016C00F4049A /* Debug */,
+				2691D28625F3016C00F4049A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2691D24C25F3016900F4049A /* Project object */;
+}
