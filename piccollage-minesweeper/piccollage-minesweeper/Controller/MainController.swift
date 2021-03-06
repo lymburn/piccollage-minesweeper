@@ -29,7 +29,7 @@ class MainController: UIViewController {
         
         let collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.backgroundColor = .gray
+        collectionView.backgroundColor = .white
         collectionView.layer.borderWidth = 4
         collectionView.layer.borderColor = UIColor.black.cgColor
         collectionView.delegate = self
@@ -72,8 +72,10 @@ extension MainController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: boardCellIdentifier, for: indexPath) as! BoardCollectionViewCell
         
+        let row = indexPath.section
+        let col = indexPath.row
         // Cell aesthetics
-        cell.backgroundColor = .clear
+        cell.backgroundColor = board.cellIsRevealed(row: row, col: col) ? .lightGray : .white
         cell.layer.borderWidth = 2
         cell.layer.borderColor = UIColor.black.cgColor
         
@@ -81,6 +83,11 @@ extension MainController: UICollectionViewDelegate, UICollectionViewDataSource {
         cell.statusLabel.text = board.getStatusTextForCell(row: indexPath.section, col: indexPath.row)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        board.revealCell(row: indexPath.section, col: indexPath.row)
+        collectionView.reloadData()
     }
 }
 

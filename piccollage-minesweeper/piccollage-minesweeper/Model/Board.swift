@@ -50,6 +50,18 @@ struct Board {
         }
     }
     
+    func cellIsRevealed(row: Int, col: Int) -> Bool {
+        return grid[row][col].revealed
+    }
+    
+    mutating func revealCell(row: Int, col: Int) {
+        grid[row][col].revealed = true
+        
+        if grid[row][col].numberOfNeighborMines == 0 {
+            floodFill(row: row, col: col)
+        }
+    }
+    
     /* Private functions */
     
     private mutating func storePossibleMineLocations() {
@@ -106,5 +118,24 @@ struct Board {
         }
         
         return neighboringMinesCount
+    }
+    
+    private mutating func floodFill(row: Int, col: Int) {
+        // Flood fill neighbours that aren't mines & aren't already revealed
+        for xoff in -1...1 {
+            for yoff in -1...1 {
+                let rowToCheck = row + xoff
+                let colToCheck = col + yoff
+                
+                // Boundary check
+                if rowToCheck > -1 && rowToCheck < grid.count && colToCheck > -1 && colToCheck < grid[0].count {
+                    let neighbor = grid[rowToCheck][colToCheck]
+                    
+                    if !neighbor.hasMine && !neighbor.revealed {
+                        revealCell(row: rowToCheck, col: colToCheck)
+                    }
+                }
+            }
+        }
     }
 }
