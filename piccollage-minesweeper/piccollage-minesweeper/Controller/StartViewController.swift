@@ -18,7 +18,7 @@ class StartViewController: BaseViewController {
     // Game settings for the 3 possible game levels
     let gameSettingsByLevel: [GameLevel: GameSettings] = [.easy : GameSettings(boardRows: 5, boardColumns: 5, numberOfMines: 5),
                                                          .medium : GameSettings(boardRows: 10, boardColumns: 6, numberOfMines: 15),
-                                                         .hard : GameSettings(boardRows: 14, boardColumns: 7, numberOfMines: 30)]
+                                                         .hard : GameSettings(boardRows: 12, boardColumns: 8, numberOfMines: 25)]
     
     lazy var startView: StartView = {
         let view = StartView()

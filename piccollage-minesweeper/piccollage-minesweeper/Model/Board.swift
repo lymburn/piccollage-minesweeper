@@ -141,7 +141,8 @@ struct Board {
     }
     
     private mutating func handleFirstClickEvent(row: Int, col: Int) {
-        if firstClick {
+        // Handle rule that first click cannot hit a mine.
+        if firstClick && possibleMineLocations.count > 0 {
             firstClick = false
             
             // If the first click is a mine, move it to a new location

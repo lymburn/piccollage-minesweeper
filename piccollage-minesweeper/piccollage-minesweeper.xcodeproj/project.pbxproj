@@ -12,7 +12,6 @@
 		2691D25C25F3016900F4049A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2691D25B25F3016900F4049A /* MainViewController.swift */; };
 		2691D26125F3016B00F4049A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2691D26025F3016B00F4049A /* Assets.xcassets */; };
 		2691D26425F3016B00F4049A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2691D26225F3016B00F4049A /* LaunchScreen.storyboard */; };
-		2691D26F25F3016C00F4049A /* piccollage_minesweeperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2691D26E25F3016C00F4049A /* piccollage_minesweeperTests.swift */; };
 		2691D27A25F3016C00F4049A /* piccollage_minesweeperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2691D27925F3016C00F4049A /* piccollage_minesweeperUITests.swift */; };
 		26C32EE625F306AD00567772 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C32EE525F306AD00567772 /* Board.swift */; };
 		26C32EEB25F306BF00567772 /* BoardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C32EEA25F306BF00567772 /* BoardCell.swift */; };
@@ -24,6 +23,7 @@
 		26C32F1525F3372300567772 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C32F1425F3372300567772 /* StartView.swift */; };
 		26C32F1A25F33A1000567772 /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C32F1925F33A1000567772 /* GameSettings.swift */; };
 		26C32F1F25F33A5600567772 /* GameLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C32F1E25F33A5600567772 /* GameLevel.swift */; };
+		26C7A09625F3448100A1A9A7 /* BoardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C7A09525F3448100A1A9A7 /* BoardTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +52,6 @@
 		2691D26325F3016B00F4049A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2691D26525F3016B00F4049A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2691D26A25F3016C00F4049A /* piccollage-minesweeperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "piccollage-minesweeperTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2691D26E25F3016C00F4049A /* piccollage_minesweeperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = piccollage_minesweeperTests.swift; sourceTree = "<group>"; };
 		2691D27025F3016C00F4049A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2691D27525F3016C00F4049A /* piccollage-minesweeperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "piccollage-minesweeperUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2691D27925F3016C00F4049A /* piccollage_minesweeperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = piccollage_minesweeperUITests.swift; sourceTree = "<group>"; };
@@ -67,6 +66,7 @@
 		26C32F1425F3372300567772 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		26C32F1925F33A1000567772 /* GameSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettings.swift; sourceTree = "<group>"; };
 		26C32F1E25F33A5600567772 /* GameLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLevel.swift; sourceTree = "<group>"; };
+		26C7A09525F3448100A1A9A7 /* BoardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,8 +132,8 @@
 		2691D26D25F3016C00F4049A /* piccollage-minesweeperTests */ = {
 			isa = PBXGroup;
 			children = (
-				2691D26E25F3016C00F4049A /* piccollage_minesweeperTests.swift */,
 				2691D27025F3016C00F4049A /* Info.plist */,
+				26C7A09525F3448100A1A9A7 /* BoardTests.swift */,
 			);
 			path = "piccollage-minesweeperTests";
 			sourceTree = "<group>";
@@ -265,6 +265,7 @@
 					};
 					2691D26925F3016C00F4049A = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
 						TestTargetID = 2691D25325F3016900F4049A;
 					};
 					2691D27425F3016C00F4049A = {
@@ -344,7 +345,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2691D26F25F3016C00F4049A /* piccollage_minesweeperTests.swift in Sources */,
+				26C7A09625F3448100A1A9A7 /* BoardTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,6 +545,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UJ6RY8Y8CY;
 				INFOPLIST_FILE = "piccollage-minesweeperTests/Info.plist";
@@ -555,6 +557,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.eugenelu.piccollage-minesweeperTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/piccollage-minesweeper.app/piccollage-minesweeper";
@@ -566,6 +570,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UJ6RY8Y8CY;
 				INFOPLIST_FILE = "piccollage-minesweeperTests/Info.plist";
@@ -577,6 +582,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.eugenelu.piccollage-minesweeperTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/piccollage-minesweeper.app/piccollage-minesweeper";

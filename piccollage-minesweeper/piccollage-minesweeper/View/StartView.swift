@@ -41,7 +41,7 @@ class StartView: UIView {
     let hardDifficultyButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Hard 14x7 board, 30 mines", for: .normal)
+        button.setTitle("Hard 12x8 board, 25 mines", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.backgroundColor = .red
         return button
