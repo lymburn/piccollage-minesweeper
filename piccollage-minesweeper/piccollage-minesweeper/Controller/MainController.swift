@@ -8,7 +8,9 @@
 import UIKit
 
 class MainController: UIViewController {
+    // Private properties
     private var board = Board(rows: 5, cols: 5, numberOfMines: 5)
+    private var gameState: GameState = .running
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +22,16 @@ class MainController: UIViewController {
     }
     
     let boardCellIdentifier = "BoardCellIdentifier"
+    
+    lazy var restartButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Restart", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.backgroundColor = .lightGray
+        button.addTarget(self, action: #selector(MainController.resetPressed), for: .touchDown)
+        return button
+    }()
 
     lazy var boardCollectionView: UICollectionView = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -43,11 +55,16 @@ class MainController: UIViewController {
 extension MainController {
     fileprivate func setupViews() {
         view.backgroundColor = .white
+        view.addSubview(restartButton)
         view.addSubview(boardCollectionView)
     }
     
     fileprivate func setupConstraints() {
-        boardCollectionView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor).isActive = true
+        restartButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        restartButton.widthAnchor.constraint(equalToConstant: ScreenSize.width * 0.3).isActive = true
+        restartButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16).isActive = true
+        
+        boardCollectionView.topAnchor.constraint(equalTo: restartButton.bottomAnchor, constant: 16).isActive = true
         boardCollectionView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
         boardCollectionView.widthAnchor.constraint(equalToConstant: 40 * 5).isActive = true
         boardCollectionView.heightAnchor.constraint(equalToConstant: 40 * 5).isActive = true
@@ -83,6 +100,7 @@ extension MainController: UICollectionViewDelegate, UICollectionViewDataSource {
         
         let row = indexPath.section
         let col = indexPath.row
+        
         // Cell aesthetics
         cell.backgroundColor = board.cellIsRevealed(row: row, col: col) ? .lightGray : .white
         cell.layer.borderWidth = 2
@@ -95,8 +113,19 @@ extension MainController: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        board.revealCell(row: indexPath.section, col: indexPath.row)
-        collectionView.reloadData()
+        // Only reveal if game is not done
+        if gameState != .finished {
+            let row = indexPath.section
+            let col = indexPath.row
+            
+            board.revealCell(row: row, col: col)
+            collectionView.reloadData()
+            
+            // Set game state to finished if hit mine
+            if board.cellIsMine(row: row, col: col) {
+                self.gameState = .finished
+            }
+        }
     }
 }
 
@@ -114,6 +143,13 @@ extension MainController {
             board.setFlag(row: indexPath.section, col: indexPath.row)
             self.boardCollectionView.reloadData()
         }
+    }
+    
+    @objc func resetPressed() {
+        // Create new board, reset game state, and reload collection view
+        self.gameState = .running
+        board = Board(rows: 5, cols: 5, numberOfMines: 5)
+        self.boardCollectionView.reloadData()
     }
 }
 

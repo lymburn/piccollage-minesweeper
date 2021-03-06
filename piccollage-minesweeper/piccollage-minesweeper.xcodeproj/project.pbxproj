@@ -17,6 +17,8 @@
 		26C32EE625F306AD00567772 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C32EE525F306AD00567772 /* Board.swift */; };
 		26C32EEB25F306BF00567772 /* BoardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C32EEA25F306BF00567772 /* BoardCell.swift */; };
 		26C32EF025F3070C00567772 /* BoardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C32EEF25F3070C00567772 /* BoardCollectionViewCell.swift */; };
+		26C32F0125F3333100567772 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C32F0025F3333100567772 /* Constants.swift */; };
+		26C32F0625F3354100567772 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C32F0525F3354100567772 /* GameState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		26C32EE525F306AD00567772 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		26C32EEA25F306BF00567772 /* BoardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardCell.swift; sourceTree = "<group>"; };
 		26C32EEF25F3070C00567772 /* BoardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardCollectionViewCell.swift; sourceTree = "<group>"; };
+		26C32F0025F3333100567772 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		26C32F0525F3354100567772 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +174,8 @@
 		26C32EF425F3078500567772 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				26C32F0025F3333100567772 /* Constants.swift */,
+				26C32F0525F3354100567772 /* GameState.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -307,6 +313,8 @@
 				2691D25C25F3016900F4049A /* MainController.swift in Sources */,
 				2691D25825F3016900F4049A /* AppDelegate.swift in Sources */,
 				26C32EE625F306AD00567772 /* Board.swift in Sources */,
+				26C32F0125F3333100567772 /* Constants.swift in Sources */,
+				26C32F0625F3354100567772 /* GameState.swift in Sources */,
 				2691D25A25F3016900F4049A /* SceneDelegate.swift in Sources */,
 				26C32EF025F3070C00567772 /* BoardCollectionViewCell.swift in Sources */,
 			);
