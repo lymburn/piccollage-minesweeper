@@ -15,7 +15,7 @@ struct Board {
     let numberOfRows: Int
     
     init (rows: Int, cols: Int, numberOfMines: Int) {
-        // Assume rows & cols will be greater than 0
+        // Simply assume rows & cols will be a valid number for this quiz
         self.numberOfRows = rows
         self.numberOfColumns = cols
         grid = Array(repeating: Array(repeating: BoardCell(), count: cols), count: rows)
@@ -25,6 +25,7 @@ struct Board {
         
         storePossibleMineLocations()
         initializeMines()
+        setNeighborMinesCount()
     }
     
     /* Public functions */
@@ -42,6 +43,8 @@ struct Board {
             return ""
         } else if cell.hasMine {
             return "M"
+        } else if cell.numberOfNeighborMines > 0{
+            return "\(cell.numberOfNeighborMines)"
         } else {
             return ""
         }
@@ -71,5 +74,37 @@ struct Board {
             possibleMineLocations.remove(at: randomIndex)
             
         }
+    }
+    
+    private mutating func setNeighborMinesCount() {
+        // Count the number of neighbouring mines for each non-mine cell and set it in the grid
+        for row in 0..<grid.count {
+            for col in 0..<grid[0].count {
+                grid[row][col].numberOfNeighborMines = countNeighborMines(row: row, col: col)
+            }
+        }
+    }
+    
+    private func countNeighborMines(row: Int, col: Int) -> Int {
+        // Function to count the number of neighbor mines for a cell at row,col
+        var neighboringMinesCount: Int = 0
+        
+        for xoff in -1...1 {
+            for yoff in -1...1 {
+                let rowToCheck = row + xoff
+                let colToCheck = col + yoff
+                
+                // Boundary check
+                if rowToCheck > -1 && rowToCheck < grid.count && colToCheck > -1 && colToCheck < grid[0].count {
+                    let neighbor = grid[rowToCheck][colToCheck]
+                    
+                    if neighbor.hasMine {
+                        neighboringMinesCount += 1
+                    }
+                }
+            }
+        }
+        
+        return neighboringMinesCount
     }
 }

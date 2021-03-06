@@ -8,6 +8,7 @@
 import Foundation
 
 struct BoardCell {
-    var revealed = false
-    var hasMine = false
+    var revealed: Bool = false
+    var hasMine: Bool = false
+    var numberOfNeighborMines: Int = 0
 }
