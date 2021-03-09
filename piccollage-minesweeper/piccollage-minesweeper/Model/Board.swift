@@ -76,8 +76,13 @@ struct Board {
     
     mutating func setFlag(row: Int, col: Int) {
         // Set flag if it's not already set. Otherwise, remove flag
-        grid[row][col].revealed = grid[row][col].revealed ? false : true
-        grid[row][col].hasFlag = grid[row][col].hasFlag ? false : true
+        if grid[row][col].revealed && grid[row][col].hasFlag {
+            grid[row][col].hasFlag = false
+            grid[row][col].revealed = false
+        } else if !grid[row][col].revealed && !grid[row][col].hasFlag {
+            grid[row][col].hasFlag = true
+            grid[row][col].revealed = true
+        }
     }
     
     /* Private functions */
